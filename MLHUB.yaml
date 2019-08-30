@@ -1,0 +1,29 @@
+--- # Natural Language Processing Best Practice
+meta:
+  name         : nlpbp
+  title        : Natural language processing best practices.
+  keywords     : natural language processing, best practices, nlp
+  version      : 0.0.1
+  languages    : python
+  license      : mit
+  author       : Graham.Williams@microsoft.com
+  url          : https://github.com/microsoft/nlpbp
+dependencies:
+  files:
+    - Microsoft/nlp:utils_nlp
+    - README.md
+commands:
+  classify: predict the category or the class of a document
+  entities: classify words/phrases into predefined entities
+  entail: determine if text agrees with a hypothesis
+  qanda: retrieve/generate answer for query in natural language
+  similar: compute similarity score for a pair of text documents
+  embed: convert a word/text to low dimension numeric vector space
+  
+# numpy - version issue
+
+#wajig install python3-cached-property
+
+#depends:
+#  wajig: python3-nltk python3-dask python3-cloudpickle
+#  pip3: pytorch_pretrained_bert
