@@ -1,3 +1,42 @@
+# Natural Language Processing Best Practice
+
+This [MLHub](https://mlhub.ai) package provides a demo of Microsoft's
+Natural Language Best Practice repository available from
+<https://github.com/microsoft/nlp>, providing examples and command
+line tools for natural language processing tasks.  A collection of
+pre-built models are exposed as command line tools building on the
+notebook examples from the repository.
+
+Visit the github repository for more details:
+<https://github.com/microsoft/nlpbp>
+
+## Usage
+
+- To install mlhub (Ubuntu)
+
+```console
+$ pip3 install mlhub
+```
+
+- To install and configure the package:
+
+```console
+$ ml install   nlpbp
+$ ml configure nlpbp
+```
+
+## Command Line Tools
+
+A demonstration of the package is presented further below using the
+*demo* command. The package also provides a number of useful command
+line tools which we introduce here.
+
+**example**
+
+The *example* command ...
+
+# Demonstration
+
 
 # Contributing
 
