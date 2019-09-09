@@ -17,12 +17,14 @@ To avoid CUDA out-of-memory errors the BATCH_SIZE and MAX_LEN are reduced,
 resulting in a compromised model performance but one that can be computed
 on a typcial user's laptop. For best model performance this same script can
 be run on cloud compute (Azure) with the parameters set to their usual values.
+
+The first part of this demo will load a pre-built model, extend it
+with new data, and then test the performance on the new data.
 """)
 
 QUICK_RUN = True
 
 import sys
-sys.path.append("../../")
 import os
 import json
 import pandas as pd
@@ -38,6 +40,12 @@ from utils_nlp.eval.classification import eval_classification
 from utils_nlp.models.bert.sequence_classification import BERTSequenceClassifier
 from utils_nlp.models.bert.common import Language, Tokenizer
 from utils_nlp.common.timer import Timer
+
+# Ignore warnings - generally not a good thing to do, but for the
+# user experience we do so here.
+
+import warnings
+warnings.filterwarnings("ignore")
 
 mlask(end="\n")
 
@@ -209,7 +217,8 @@ print("[Training time: {:.3f} hrs]".format(t.interval / 3600))
 mlask(begin="\n", end="\n")
 
 mlcat("Score", """\
-We now score the test set using the trained classifier.
+We now score the test set using the trained classifier to obtain an estimate
+of how well the model performs.
 """)
 
 preds = classifier.predict(token_ids=tokens_test, 
@@ -225,9 +234,13 @@ the evaluation on the test set.
 
 report = classification_report(labels_test, preds, target_names=label_encoder.classes_, output_dict=True) 
 accuracy = accuracy_score(labels_test, preds )
-print("accuracy: {:.2}".format(accuracy))
-# TODO Iterate through the json and print it properly!!!
-print(json.dumps(report, indent=4, sort_keys=True))
+print("accuracy: {:.2}\n".format(accuracy))
 
-mlask(begin="\n")
+for g in report:
+    print(g)
+    for m in report[g]:
+        print("  {} = {}".format(m, round(report[g][m], 2)), end="")
+    print("\n")
+        
+mlask()
 
