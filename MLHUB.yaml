@@ -3,7 +3,7 @@ meta:
   name         : nlpbp
   title        : Natural language processing best practices.
   keywords     : natural language processing, best practices, nlp
-  version      : 0.0.1
+  version      : 0.0.2
   languages    : python
   license      : mit
   author       : Graham.Williams@microsoft.com
