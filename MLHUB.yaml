@@ -10,15 +10,17 @@ meta:
   url          : https://github.com/microsoft/nlpbp
 dependencies:
   files:
-    - Microsoft/nlp:utils_nlp
+    - microsoft/nlp:utils_nlp
     - README.md
+    - demo.py
 commands:
-  classify: predict the category or the class of a document
-  entities: classify words/phrases into predefined entities
-  entail: determine if text agrees with a hypothesis
-  qanda: retrieve/generate answer for query in natural language
-  similar: compute similarity score for a pair of text documents
-  embed: convert a word/text to low dimension numeric vector space
+  demo     : Demonstrate the general functionality
+#  classify: predict the category or the class of a document
+#  entities: classify words/phrases into predefined entities
+#  entail: determine if text agrees with a hypothesis
+#  qanda: retrieve/generate answer for query in natural language
+#  similar: compute similarity score for a pair of text documents
+#  embed: convert a word/text to low dimension numeric vector space
   
 # numpy - version issue
 
